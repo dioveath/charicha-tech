@@ -19,5 +19,23 @@ Users fetches and consumes the news.
 }
 ```
 
-	
+REST API Route for User, 
+Get User
+``` REST
+GET: http://localhost:3000/api/v1/users/617e99c39228451532f628f9
+```
 
+Update user with JSON body 
+``` REST
+POST: http://localhost:3000/api/v1/users/617e99c39228451532f628f9
+```
+
+Create user with JSON body
+``` REST
+POST: http://localhost:3000/api/v1/users
+```
+
+Delete user
+``` REST
+DELETE: http://localhost:3000/api/v1/users/617e99c39228451532f628f9
+```

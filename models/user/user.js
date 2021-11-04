@@ -6,7 +6,8 @@ var buildMakeUser = function(userValidator, bcrypt) {
     last_name,
     nickname,
     email,
-    password
+    password,
+    roles
   } = {}) => {
 
     var error = userValidator({
@@ -14,7 +15,8 @@ var buildMakeUser = function(userValidator, bcrypt) {
       last_name,
       nickname,
       email,
-      password
+      password,
+      roles
     });
 
     if(error instanceof Object) throw new Error(error.errorList);
@@ -33,7 +35,8 @@ var buildMakeUser = function(userValidator, bcrypt) {
       getLastName: () => last_name,
       getNickName: () => nickname,
       getEmail: () => email,
-      getPassword: () => hashedPassword
+      getPassword: () => hashedPassword,
+      getRoles: () => roles
     });
     
 

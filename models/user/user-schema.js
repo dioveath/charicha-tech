@@ -1,4 +1,4 @@
-const Joi = require("joi");
+const Joi = require("joi-oid");
 
 const userUpdateSchema = Joi.object().keys({
   first_name: Joi.string().alphanum().min(3).max(30),
@@ -6,6 +6,7 @@ const userUpdateSchema = Joi.object().keys({
   nickname: Joi.string().max(20).pattern(/^[A-z]+$/),
   email: Joi.string().email(),
   password: Joi.string().pattern(/^[A-z0-9~!@#$%^&*()_+-=]{3,30}$/),
+  roles: Joi.array().items(Joi.objectId())
 }).min(1);
 
 

@@ -30,7 +30,10 @@ describe('makeUser', () => {
       "last_name": "Prasad",
       "nickname": "rame",
       "email": "ramprasad@gmail.com",
-      "password": "prasad00"      
+      "password": "prasad00",
+      "roles": [
+        '614b6844e28ef411e800368d' // this is not actual role
+      ]
     };
 
     var validUser = await makeUser(validPayload);
@@ -40,6 +43,7 @@ describe('makeUser', () => {
     expect(validUser.getNickName()).to.equal(validPayload.nickname);
     expect(validUser.getEmail()).to.equal(validPayload.email);
     expect(validUser.getPassword()).to.not.equal(validPayload.password);   // ¤ hashPassword
+    expect(validUser.getRoles()).to.equal(validPayload.roles);
 
   });
 
